@@ -1,0 +1,36 @@
+{
+  "name": "spotify-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper to work with the Spotify Web API",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "precommit": "npm run lint",
+    "test": "./node_modules/.bin/mocha test/**/*.spec.js",
+    "test:tdd": "./node_modules/.bin/mocha test/**/*.spec.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudvanbarret/spotify-wrapper.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Claudivan Barreto <claudivanbarretodasilva@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claudvanbarret/spotify-wrapper/issues"
+  },
+  "homepage": "https://github.com/claudvanbarret/spotify-wrapper#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3",
+    "mocha": "^5.0.0"
+  }
+}
