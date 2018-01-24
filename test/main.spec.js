@@ -1,10 +1,36 @@
-describe('Main', function () {
-  var arr;
+import { expect } from 'chai';
+import { search, searchAlbuns, searchArtists, searchTracks, searchPlaylists } from '../src/main';
 
-  beforeEach(function(){
-    arr = [1, 2, 3];
+describe('Spotify Wrapper', () => {
+
+  describe('Smoke tests', () => {
+
+    it('should exist the search method', () => {
+      expect(search).to.exist;
+    });
+
+    it('should exist the searchAlbuns method', () => {
+      expect(searchAlbuns).to.exist;
+    });
+
+    it('should exist the searchArtists method', () => {
+      expect(searchArtists).to.exist;
+    });
+
+    it('should exist the searchTracks method', () => {
+      expect(searchTracks).to.exist;
+    });
+
+    it('should exist the searchPlaylists method', () => {
+      expect(searchPlaylists).to.exist;
+    });
+
   });
 
-  it('should have a size of 4 when push another value to ')
+  describe('Generic Search', () => {
 
+    it('should call fetch function', () => {
+      const artists = search(); 
+    });
+  });
 });
