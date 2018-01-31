@@ -42,6 +42,15 @@ describe('Spotify Wrapper', () => {
       const artists = search(); 
 
       expect(fetchStub).to.have.been.calledOnce;
+
+      fetchStub.restore();
+    });
+
+    it('shoulf receive the correct url to fetch', () => {
+      const fetchStub = sinon.stub(global, 'fetch');
+      const artists = search('Incubus', 'artist');
+
+      expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist');
     });
   });
 });
