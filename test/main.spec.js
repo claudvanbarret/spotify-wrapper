@@ -75,4 +75,52 @@ describe('Spotify Wrapper', () => {
       expect(artists.resolveValue).to.be.eql({ 'body': 'json'});
     });
   });
+
+  describe('searchArtist', () => {
+    it('should call fetch function', () => {
+      const artist = searchArtists('Incubus');
+      expect(fetchStub).to.have.been.calledOnce;
+    });
+
+    it('should call fetch with the correct URL', () => {
+      const artist = searchArtists('Incubus');
+      expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist');
+    });
+  });
+
+  describe('searchAlbums', () => {
+    it('should call fetch function', () => {
+      const albums = searchAlbuns('Incubus');
+      expect(fetchStub).to.have.been.calledOnce;
+    });
+
+    it('should call fetch with the correct URL', () => {
+      const albums = searchAlbuns('Incubus');
+      expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=album');
+    });
+  });
+
+  describe('searchTrack', () => {
+    it('should call fetch function', () => {
+      const tracks = searchTracks('Incubus');
+      expect(fetchStub).to.have.been.calledOnce;
+    });
+
+    it('should call fetch with the correct URL', () => {
+      const tracks = searchTracks('Incubus');
+      expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=track');
+    });
+  }); 
+
+  describe('searchPlaylist', () => {
+    it('should call fetch function', () => {
+      const artist = searchPlaylists('Incubus');
+      expect(fetchStub).to.have.been.calledOnce;
+    });
+
+    it('should call fetch with the correct URL', () => {
+      const artist = searchPlaylists('Incubus');
+      expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=playlist');
+    });
+  });
 });
